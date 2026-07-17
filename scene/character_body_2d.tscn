@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://1g72rhwn65p0"]
+
+[ext_resource type="Script" uid="uid://bhbd0feyb47jb" path="res://scripts/character_body_2d.gd" id="1_qug0s"]
+[ext_resource type="Texture2D" uid="uid://b6e73cn7qrkvd" path="res://assets/PACK - Lil Dino Free.png" id="1_snucy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qug0s"]
+atlas = ExtResource("1_snucy")
+region = Rect2(5, 34, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd05a"]
+atlas = ExtResource("1_snucy")
+region = Rect2(36, 34, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86iwx"]
+atlas = ExtResource("1_snucy")
+region = Rect2(67, 34, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_318mt"]
+atlas = ExtResource("1_snucy")
+region = Rect2(98, 34, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8c3x"]
+atlas = ExtResource("1_snucy")
+region = Rect2(129, 34, 31, 31)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ogaei"]
+atlas = ExtResource("1_snucy")
+region = Rect2(160, 34, 31, 31)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g587t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qug0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gd05a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86iwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_318mt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b8c3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ogaei")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_muu1h"]
+radius = 5.0
+height = 12.0
+
+[node name="dino" type="CharacterBody2D" unique_id=1706464402]
+script = ExtResource("1_qug0s")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1761659920]
+position = Vector2(0, 0.25)
+scale = Vector2(1, 1.016129)
+sprite_frames = SubResource("SpriteFrames_g587t")
+autoplay = "default"
+frame = 4
+frame_progress = 0.010984242
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1062560868]
+position = Vector2(1, -2)
+shape = SubResource("CapsuleShape2D_muu1h")
