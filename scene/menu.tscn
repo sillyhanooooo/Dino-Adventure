@@ -1,0 +1,180 @@
+[gd_scene format=3 uid="uid://dvtpu87fyidoj"]
+
+[ext_resource type="Script" uid="uid://dw8w5ybtabq53" path="res://scripts/menu.gd" id="1_8hxod"]
+[ext_resource type="FontFile" uid="uid://bf02ukohdwvga" path="res://assets/Minecraft.ttf" id="1_e5g8k"]
+[ext_resource type="Shader" uid="uid://bhbqhp6mcxefy" path="res://shader/title.gdshader" id="2_pb5j1"]
+[ext_resource type="Texture2D" uid="uid://crklnfuorfqwa" path="res://assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/1.png" id="3_vi6sp"]
+[ext_resource type="Texture2D" uid="uid://bp15kf36ybkkc" path="res://assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/2.png" id="4_1qlln"]
+[ext_resource type="Shader" uid="uid://d0r132m5iyyc2" path="res://shader/bclouds.gdshader" id="4_wd6lm"]
+[ext_resource type="Texture2D" uid="uid://cdjwhs6ciafr1" path="res://assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/4.png" id="5_wd6lm"]
+[ext_resource type="Texture2D" uid="uid://cjavojrkbsqao" path="res://assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/3.png" id="6_nuiae"]
+[ext_resource type="Shader" uid="uid://30kp2sy74j3e" path="res://shader/fclouds.gdshader" id="6_pb5j1"]
+[ext_resource type="Shader" uid="uid://dxpy4g3vtdw38" path="res://shader/lcoud.gdshader" id="8_nuiae"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_muu1h"]
+shader = ExtResource("2_pb5j1")
+shader_parameter/pulse_speed = 2.0
+shader_parameter/pulse_amount = 0.1
+
+[sub_resource type="LabelSettings" id="LabelSettings_muu1h"]
+font = ExtResource("1_e5g8k")
+font_size = 84
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.40784314)
+stacked_outline_count = 1
+stacked_outline_0/size = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kmyd"]
+bg_color = Color(0, 0.30588236, 1, 1)
+border_width_bottom = 13
+border_color = Color(0, 0.13333334, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+shadow_color = Color(1, 1, 0.24705882, 0.11764706)
+shadow_size = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ho8t7"]
+bg_color = Color(0, 0.3372549, 1, 1)
+border_width_bottom = 10
+border_color = Color(0, 0.03137255, 0.81960785, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+shadow_color = Color(0, 0, 0, 0.34901962)
+shadow_size = 11
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bo06a"]
+bg_color = Color(0, 0.3372549, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+shadow_color = Color(0.94509804, 0.90588236, 0, 0.16862746)
+shadow_size = 12
+
+[sub_resource type="Theme" id="Theme_xnhpt"]
+resource_local_to_scene = true
+default_font = ExtResource("1_e5g8k")
+Button/styles/hover = SubResource("StyleBoxFlat_7kmyd")
+Button/styles/normal = SubResource("StyleBoxFlat_ho8t7")
+Button/styles/pressed = SubResource("StyleBoxFlat_bo06a")
+Label/font_sizes/font_size = 19
+
+[sub_resource type="LabelSettings" id="LabelSettings_ni8oj"]
+font = ExtResource("1_e5g8k")
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6fejx"]
+shader = ExtResource("4_wd6lm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_akoio"]
+shader = ExtResource("6_pb5j1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ho73k"]
+shader = ExtResource("8_nuiae")
+
+[node name="Control" type="Control" unique_id=1208918470]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8hxod")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=727469768]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=1346033916]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_muu1h")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -292.0
+offset_right = 279.0
+offset_bottom = -79.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Dino Adventure"
+label_settings = SubResource("LabelSettings_muu1h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StartBotton" type="Button" parent="CanvasLayer" unique_id=1548589944]
+offset_left = 448.0
+offset_top = 232.0
+offset_right = 705.0
+offset_bottom = 310.0
+theme = SubResource("Theme_xnhpt")
+text = "START"
+
+[node name="Options" type="Button" parent="CanvasLayer" unique_id=1427398617]
+offset_left = 448.0
+offset_top = 336.0
+offset_right = 705.0
+offset_bottom = 415.0
+theme = SubResource("Theme_xnhpt")
+text = "Options"
+
+[node name="Quit" type="Button" parent="CanvasLayer" unique_id=45651523]
+offset_left = 448.0
+offset_top = 432.0
+offset_right = 704.0
+offset_bottom = 514.0
+theme = SubResource("Theme_xnhpt")
+text = "Quit"
+
+[node name="Label2" type="Label" parent="CanvasLayer" unique_id=84159533]
+anchors_preset = -1
+anchor_right = 0.035
+anchor_bottom = 0.035
+offset_left = 19.0
+offset_top = 612.0
+offset_right = 95.68
+offset_bottom = 612.32
+text = "@ SILLY HANO"
+label_settings = SubResource("LabelSettings_ni8oj")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1954215500]
+root_node = NodePath("../CanvasLayer/StartBotton")
+
+[node name="blue_sky" type="TextureRect" parent="." unique_id=2076370484]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("3_vi6sp")
+
+[node name="back_clouds" type="TextureRect" parent="." unique_id=256085168]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_6fejx")
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+texture = ExtResource("4_1qlln")
+
+[node name="front_clouds" type="TextureRect" parent="." unique_id=1746755102]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_akoio")
+layout_mode = 0
+offset_right = 1156.0
+offset_bottom = 647.0
+texture = ExtResource("5_wd6lm")
+
+[node name="line_cloud" type="TextureRect" parent="." unique_id=1880733336]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ho73k")
+layout_mode = 0
+offset_right = 1157.0
+offset_bottom = 647.0
+texture = ExtResource("6_nuiae")
+
+[connection signal="pressed" from="CanvasLayer/StartBotton" to="." method="_on_start_botton_pressed"]
+[connection signal="pressed" from="CanvasLayer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="CanvasLayer/Quit" to="." method="_on_quit_pressed"]

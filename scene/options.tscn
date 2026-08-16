@@ -1,0 +1,189 @@
+[gd_scene format=3 uid="uid://cuppgpka2ut1r"]
+
+[ext_resource type="Script" uid="uid://cbo28oavn5q8r" path="res://scripts/options.gd" id="1_6kqe7"]
+[ext_resource type="FontFile" uid="uid://bf02ukohdwvga" path="res://assets/Minecraft.ttf" id="1_eynqa"]
+[ext_resource type="Texture2D" uid="uid://crklnfuorfqwa" path="res://assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/1.png" id="3_x4vle"]
+[ext_resource type="Shader" uid="uid://f2j8qve3aiyl" path="res://shader/sbcloud.gdshader" id="4_bgq50"]
+[ext_resource type="Texture2D" uid="uid://bp15kf36ybkkc" path="res://assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/2.png" id="5_3140y"]
+[ext_resource type="Shader" uid="uid://bxlrsu07ns7mw" path="res://shader/sfcloud.gdshader" id="6_2nirn"]
+[ext_resource type="Texture2D" uid="uid://cdjwhs6ciafr1" path="res://assets/free-sky-with-clouds-background-pixel-art-set/Clouds/Clouds 1/4.png" id="7_wibsa"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_muu1h"]
+font = ExtResource("1_eynqa")
+font_size = 65
+outline_size = 4
+outline_color = Color(0, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3140y"]
+bg_color = Color(0, 0.4, 1, 1)
+border_width_bottom = 16
+border_color = Color(0, 0.25490198, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2c2ip"]
+bg_color = Color(0, 0.38039216, 1, 1)
+border_width_bottom = 11
+border_color = Color(0, 0.25882354, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bgq50"]
+bg_color = Color(0, 0.42745098, 1, 1)
+border_color = Color(0, 0.34509805, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_qcytm"]
+Button/styles/hover = SubResource("StyleBoxFlat_3140y")
+Button/styles/normal = SubResource("StyleBoxFlat_2c2ip")
+Button/styles/pressed = SubResource("StyleBoxFlat_bgq50")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ewy40"]
+bg_color = Color(0, 0.48235294, 1, 1)
+border_width_bottom = 13
+border_color = Color(0, 0.30980393, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qcytm"]
+bg_color = Color(0, 0.4509804, 1, 1)
+border_width_bottom = 12
+border_color = Color(0, 0.2784314, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4vle"]
+bg_color = Color(0, 0.40784314, 1, 1)
+border_width_bottom = 13
+border_color = Color(0, 0.3254902, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="Theme" id="Theme_ni8oj"]
+default_font = ExtResource("1_eynqa")
+Button/fonts/font = ExtResource("1_eynqa")
+Button/styles/hover = SubResource("StyleBoxFlat_ewy40")
+Button/styles/normal = SubResource("StyleBoxFlat_qcytm")
+Button/styles/pressed = SubResource("StyleBoxFlat_x4vle")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nirn"]
+bg_color = Color(0, 0.43137255, 1, 1)
+border_width_bottom = 16
+border_color = Color(0, 0.31764707, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 7
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ni8oj"]
+bg_color = Color(0, 0.4627451, 1, 1)
+border_width_bottom = 11
+border_color = Color(0, 0.28235295, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wibsa"]
+bg_color = Color(0, 0.43529412, 1, 1)
+corner_radius_top_left = 7
+corner_radius_top_right = 7
+corner_radius_bottom_right = 7
+corner_radius_bottom_left = 5
+
+[sub_resource type="Theme" id="Theme_muu1h"]
+Button/fonts/font = ExtResource("1_eynqa")
+Button/styles/hover = SubResource("StyleBoxFlat_2nirn")
+Button/styles/normal = SubResource("StyleBoxFlat_ni8oj")
+Button/styles/pressed = SubResource("StyleBoxFlat_wibsa")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ni8oj"]
+shader = ExtResource("4_bgq50")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qcytm"]
+shader = ExtResource("6_2nirn")
+
+[node name="Options" type="Control" unique_id=818300218]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6kqe7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2135178645]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=575594580]
+offset_left = 448.0
+offset_top = 56.0
+offset_right = 710.0
+offset_bottom = 123.0
+text = "Settings"
+label_settings = SubResource("LabelSettings_muu1h")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="help" type="Button" parent="CanvasLayer" unique_id=115951160]
+offset_left = 448.0
+offset_top = 184.0
+offset_right = 704.0
+offset_bottom = 260.0
+theme = SubResource("Theme_qcytm")
+text = "help"
+
+[node name="Save" type="Button" parent="CanvasLayer" unique_id=2126266892]
+offset_left = 448.0
+offset_top = 281.0
+offset_right = 711.0
+offset_bottom = 370.0
+theme = SubResource("Theme_ni8oj")
+text = "Save"
+
+[node name="exit" type="Button" parent="CanvasLayer" unique_id=1095695210]
+offset_left = 448.0
+offset_top = 385.0
+offset_right = 711.0
+offset_bottom = 468.0
+theme = SubResource("Theme_muu1h")
+text = "Exit"
+
+[node name="sky" type="TextureRect" parent="." unique_id=1482540605]
+layout_mode = 0
+offset_right = 1153.0
+offset_bottom = 648.0
+texture = ExtResource("3_x4vle")
+
+[node name="bcloud" type="TextureRect" parent="." unique_id=43936266]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ni8oj")
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 648.0
+texture = ExtResource("5_3140y")
+
+[node name="fcloud" type="TextureRect" parent="." unique_id=1132427250]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_qcytm")
+layout_mode = 0
+offset_left = -3.0
+offset_top = 1.0
+offset_right = 1156.0
+offset_bottom = 650.0
+texture = ExtResource("7_wibsa")
+
+[connection signal="pressed" from="CanvasLayer/Save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="CanvasLayer/exit" to="." method="_on_exit_pressed"]

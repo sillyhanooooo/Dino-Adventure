@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cx3cwhdv43ci3"]
+
+[ext_resource type="Script" uid="uid://ej8h648fryoi" path="res://scripts/ui.gd" id="1_s2f8l"]
+[ext_resource type="Texture2D" uid="uid://rni04cl446ov" path="res://addons/script-ide/outline/icon/func.svg" id="2_kee8w"]
+[ext_resource type="Shader" uid="uid://chqb1ro6v6j4a" path="res://shader/ui.gdshader" id="3_xh8xk"]
+[ext_resource type="Texture2D" uid="uid://dx6ypv5bmbydu" path="res://assets/heart ko.png" id="4_xh8xk"]
+
+[sub_resource type="Theme" id="Theme_kee8w"]
+Button/icons/icon = ExtResource("2_kee8w")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ewy40"]
+shader = ExtResource("3_xh8xk")
+shader_parameter/bpm = 72.0
+shader_parameter/pulse_strength = 0.15
+
+[node name="UI" type="Control" unique_id=2056864713]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s2f8l")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=903944880]
+
+[node name="Menu" type="Button" parent="CanvasLayer" unique_id=193838409]
+offset_left = 2.0
+offset_top = 585.0
+offset_right = 77.0
+offset_bottom = 644.0
+theme = SubResource("Theme_kee8w")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1753946391]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ewy40")
+offset_left = 15.0
+offset_top = 11.0
+offset_right = 55.0
+offset_bottom = 51.0
+texture = ExtResource("4_xh8xk")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer" unique_id=385633144]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ewy40")
+offset_left = 175.0
+offset_top = 11.0
+offset_right = 215.0
+offset_bottom = 51.0
+texture = ExtResource("4_xh8xk")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer" unique_id=83019659]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ewy40")
+offset_left = 135.0
+offset_top = 11.0
+offset_right = 175.0
+offset_bottom = 51.0
+texture = ExtResource("4_xh8xk")
+
+[node name="TextureRect4" type="TextureRect" parent="CanvasLayer" unique_id=1108522590]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ewy40")
+offset_left = 95.0
+offset_top = 11.0
+offset_right = 135.0
+offset_bottom = 51.0
+texture = ExtResource("4_xh8xk")
+
+[node name="TextureRect5" type="TextureRect" parent="CanvasLayer" unique_id=403369845]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ewy40")
+offset_left = 55.0
+offset_top = 11.0
+offset_right = 95.0
+offset_bottom = 51.0
+texture = ExtResource("4_xh8xk")
+
+[connection signal="pressed" from="CanvasLayer/Menu" to="." method="_on_menu_pressed"]
